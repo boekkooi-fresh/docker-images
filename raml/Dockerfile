@@ -1,3 +1,3 @@
 FROM node:latest
 
-RUN npm install -g raml2html osprey-mock-service abao
+RUN npm install -g raml2html osprey-mock-service abao localapi
