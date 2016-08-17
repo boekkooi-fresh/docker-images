@@ -8,6 +8,6 @@ RUN mkdir -p /data
 VOLUME /data
 WORKDIR /data
 
-ENTRYPOINT ["raml2yaml"]
+ENTRYPOINT ["raml2html"]
 
 CMD ["--help"]
