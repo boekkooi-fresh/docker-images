@@ -12,6 +12,8 @@ RUN mkdir -p /data
 VOLUME /data
 WORKDIR /data
 
+EXPOSE 3333
+
 ENTRYPOINT ["localapi"]
 
 CMD ["--help"]
