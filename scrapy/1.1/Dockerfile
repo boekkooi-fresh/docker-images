@@ -1,4 +1,4 @@
-FROM python:3.3-slim
+FROM python:3.3
 
 ENV SCRAPY_VERSION ">=1.1,<1.2"
 
