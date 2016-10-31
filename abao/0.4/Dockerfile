@@ -1,7 +1,7 @@
 FROM node:slim
 
 ENV ABAO_VERSION ^0.4.0-beta
-ENV NODE_PATH="/usr/local/lib/:${NODE_PATH}" 
+ENV NODE_PATH="/usr/local/lib/node_modules:${NODE_PATH}" 
 
 RUN npm install --global "abao@${ABAO_VERSION}"
 RUN npm install --global "request"
