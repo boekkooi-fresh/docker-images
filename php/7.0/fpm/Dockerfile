@@ -21,6 +21,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
 
+ENV COMPOSER_BIN_DIR /usr/local/bin
+
 RUN mkfifo /tmp/stdout && chown www-data:www-data /tmp/stdout
 
 CMD php-fpm --daemonize && tail -f /var/log/api-client
