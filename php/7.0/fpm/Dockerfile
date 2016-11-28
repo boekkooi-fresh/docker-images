@@ -25,4 +25,4 @@ ENV COMPOSER_BIN_DIR /usr/local/bin
 
 RUN mkfifo /tmp/stdout && chown www-data:www-data /tmp/stdout
 
-CMD php-fpm --daemonize && tail -f /var/log/api-client
+CMD php-fpm --daemonize && tail -f /tmp/stdout
