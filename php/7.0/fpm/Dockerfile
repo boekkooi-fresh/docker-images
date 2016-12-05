@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
         zlib1g-dev \
         libicu-dev \
         libssl-dev \
-      && docker-php-ext-install zip intl mbstring pdo pdo_mysql opcache \
+      && docker-php-ext-install bcmath zip intl mbstring pdo pdo_mysql opcache \
       && pecl install apcu \
       && docker-php-ext-enable apcu
 
