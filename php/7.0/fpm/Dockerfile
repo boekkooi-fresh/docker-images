@@ -2,9 +2,10 @@ FROM php:7.0.13-fpm
 
 RUN apt-get update && apt-get install -y wget
 
-ENV DOCKERIZE_VERSION v0.2.0
+ENV DOCKERIZE_VERSION v0.3.0
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 RUN apt-get update && apt-get install -y \
         git \
@@ -22,7 +23,3 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
 
 ENV COMPOSER_BIN_DIR /usr/local/bin
-
-RUN mkfifo /tmp/stdout && chown www-data:www-data /tmp/stdout
-
-CMD php-fpm --daemonize && tail -f /tmp/stdout
