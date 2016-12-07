@@ -1,4 +1,4 @@
-FROM php:7.1.0RC6-fpm
+FROM php:7.1.0-fpm
 
 RUN apt-get update && apt-get install -y wget
 
