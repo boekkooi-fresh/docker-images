@@ -9,7 +9,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 ENV ABAO_VERSION 0.5.0
 
-RUN npm install --global "abao@${ABAO_VERSION}"
+RUN npm install --global "abao@${ABAO_VERSION} request"
 
 RUN mkdir -p /data
 VOLUME /data
