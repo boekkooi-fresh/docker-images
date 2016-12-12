@@ -1,4 +1,4 @@
-FROM php:7.0.13-fpm
+FROM php:7.0.14-fpm
 
 RUN apt-get update && apt-get install -y \
         git \
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
         libssl-dev \
         wget \
       && docker-php-ext-install zip intl mbstring pdo pdo_mysql opcache bcmath \
-      && pecl install apcu \
+      && pecl install apcu xdebug \
       && docker-php-ext-enable apcu
 
 ENV DOCKERIZE_VERSION v0.3.0
